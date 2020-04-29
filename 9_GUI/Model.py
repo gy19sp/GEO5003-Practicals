@@ -69,26 +69,29 @@ def gen_function(b = [0]):
         yield a			# Returns control and waits next call.
         a = a + 1
      
-
-def run(i):
-    model_menu.entryconfig("Run model", state="disable")
-    
-
  
+def run(i):
+
+    model_menu.entryconfig("Run model", state="disable")
+
+
+
+"""model could not be associated with menus"""
 root = tkinter.Tk()
 root.wm_title("Model")
 menu = tkinter.Menu(root)
 root.config(menu=menu)
+#sets the Menu
 model_menu = tkinter.Menu(menu)
-menu.add_cascade(label="Model", menu=model_menu)
-model_menu.add_command(label="Run model", command=run)
+menu.add_cascade(label="Model", menu=model_menu)# creates the model menu with pulldown
+model_menu.add_command(label="Run model", command=run)# creates the run model option
 
 
 canvas = matplotlib.backends.backend_tkagg.FigureCanvasTkAgg(fig, master=root)
 canvas._tkcanvas.pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
 
 ani = matplotlib.animation.FuncAnimation(fig, update, frames=num_of_iterations, repeat=False)
-
+# describes the snimation
 
 tkinter.mainloop() 
 
