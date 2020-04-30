@@ -67,9 +67,9 @@ def gen_function(b = [0]):
 """defines the parameters for the animation including base figure, time(number of iterations/
 set time/ generated), and whether or not the animation should be repeated"""
         
-animation = matplotlib.animation.FuncAnimation(fig, update, frames=num_of_iterations, repeat=False)""" define the animation which includes
-The figure, the update section which includes the various items from the agentframework, and the number of iterations which could have been
+animation = matplotlib.animation.FuncAnimation(fig, update, frames=num_of_iterations, repeat=False)
+""" define the animation which includes the figure, the update section which includes the various items from the agentframework, and the number of iterations which could have been
 set to a random generator, but was instead fixed to the number of iterations, basically now all actions are being made within the environment
 of the animation: The model"""
-#Shows the animation
+
 matplotlib.pyplot.show()
